@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./static
+
+    ports:
+      - "3000:3000"
+
+  backend:
+    build:
+      context: ./server
+    ports:
+      - "8080:8080"
+
+
+

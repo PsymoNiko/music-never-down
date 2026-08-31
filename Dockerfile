@@ -1,5 +1,10 @@
 FROM ubuntu:14.04
 
+ENV http_proxy="http://21.199.122.119:8080"
+ENV https_proxy="https://21.199.122.119:8080"
+
+
+
 RUN apt-get update && apt-get install -y \
     pkg-config \
     libpng-dev \
@@ -30,4 +35,5 @@ RUN npm install && npm run build
 WORKDIR /src/server/
 
 EXPOSE 8080
-ENTRYPOINT python server.py
+ENTRYPOINT ["python", "server.py"]
+
